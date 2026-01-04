@@ -4,7 +4,9 @@ Step sequencer / drum machine with 16-step grid and synthesized drums.
 
 ## ✨ [**LIVE DEMO**](https://nightowlcoder.github.io/kova-beat-sequencer/)
 
-![Beat Sequencer](https://img.shields.io/badge/size-43KB-brightgreen) ![No Dependencies](https://img.shields.io/badge/dependencies-none-blue)
+![Beat Sequencer Screenshot](screenshot.png)
+
+![Size](https://img.shields.io/badge/size-43KB-brightgreen) ![No Dependencies](https://img.shields.io/badge/dependencies-none-blue)
 
 ---
 
