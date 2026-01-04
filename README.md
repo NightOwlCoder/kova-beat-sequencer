@@ -1,76 +1,100 @@
-# Beat Sequencer
+# 🥁 Kova's Beat Sequencer
 
-A purple-themed drum machine with synthesized sounds via Web Audio API.
+Step sequencer / drum machine with 16-step grid and synthesized drums.
 
-![Beat Sequencer](https://img.shields.io/badge/size-<50KB-brightgreen) ![No Dependencies](https://img.shields.io/badge/dependencies-none-blue)
+## ✨ [**LIVE DEMO**](https://nightowlcoder.github.io/kova-beat-sequencer/)
+
+![Beat Sequencer](https://img.shields.io/badge/size-43KB-brightgreen) ![No Dependencies](https://img.shields.io/badge/dependencies-none-blue)
+
+---
 
 ## Features
 
-- **16-step grid** with 6 drum sounds (Kick, Snare, Hi-Hat, Tom, Clap, Rim)
-- **Synthesized drums** - no external samples, all generated with Web Audio oscillators & noise
-- **Real-time BPM control** (60-180 BPM) that changes playback speed instantly
-- **Canvas waveform visualization** connected to audio analyzer
-- **Pattern persistence** - Save/Load to localStorage
-- **Touch-friendly** - 44px minimum touch targets, works on mobile
-- **Keyboard shortcuts**:
-  - `Space` - Play/Stop
-  - `C` - Clear pattern
-  - `R` - Randomize pattern
-  - `Cmd/Ctrl+S` - Save pattern
+- 🎛️ **16-Step Grid** - Classic drum machine layout (4 bars of 16th notes)
+- 🥁 **6 Synthesized Drums** - Kick, Snare, Hi-Hat, Tom, Clap, Rim (no samples needed!)
+- ⚡ **Real-Time BPM Control** - 60-180 BPM with instant speed changes
+- 📊 **Canvas Waveform** - Live audio visualization
+- 💾 **Pattern Save/Load** - LocalStorage persistence
+- 📱 **Touch-Friendly** - 44px minimum touch targets, works on mobile
+- ⌨️ **Keyboard Shortcuts** - Space (play), C (clear), R (random), Cmd+S (save)
+- 💜 **Purple Neon Theme** - Kova brand aesthetic
 
-## Files
+---
 
-```
-beat-sequencer/
-├── index.html   (3KB)  - Semantic HTML structure
-├── style.css    (11KB) - Purple/neon theme with CSS variables
-├── app.js       (25KB) - Audio engine, sequencer, and UI logic
-└── README.md
-```
+## How to Use
 
-## Technical Details
+1. **Click cells** to toggle beats on/off (they glow purple!)
+2. Press **▶ Play** or hit **Space** to start
+3. **BPM slider** - Control tempo (actually works!)
+4. **Clear** - Reset pattern
+5. **Random** - Generate random beat
+6. **Save** - Store pattern in browser
+
+**Pro tip:** Start with kick on 1, 5, 9, 13 and snare on 5, 13 for a basic house beat! 🎧
+
+---
+
+## Tech Stack
+
+- **Web Audio API** - Real-time audio synthesis
+- **Vanilla JavaScript** - No frameworks, pure performance
+- **HTML5 Canvas** - Waveform visualization
+- **CSS Grid** - Responsive sequencer layout
+- **LocalStorage** - Pattern persistence
 
 ### Audio Synthesis
 
-All drum sounds are generated in real-time using Web Audio API:
-
-- **Kick**: Sine oscillator with frequency sweep (150Hz → 30Hz) + click transient
-- **Snare**: Highpass filtered noise + triangle wave body
+All drums synthesized using Web Audio oscillators:
+- **Kick**: Sine wave with frequency sweep (150Hz → 30Hz)
+- **Snare**: Filtered noise + triangle wave
 - **Hi-Hat**: Bandpass filtered high-frequency noise
-- **Tom**: Sine oscillator with pitch envelope
-- **Clap**: Multiple short noise bursts with bandpass filter
-- **Rim**: Triangle + square oscillators for sharp click
+- **Tom**: Sine with pitch envelope
+- **Clap**: Multiple noise bursts
+- **Rim**: Triangle + square for sharp click
 
-### Timing
+---
 
-The sequencer uses `setTimeout` with BPM-based intervals:
-- Interval = `60000 / bpm / 4` ms (for 16th notes)
-- BPM changes take effect on the next step
+## Local Development
 
-### Browser Support
-
-Requires Web Audio API support (all modern browsers).
-AudioContext is created on first user interaction to comply with autoplay policies.
-
-## Usage
-
-1. Open `index.html` in a browser
-2. Click/tap to dismiss the start overlay (required for audio)
-3. Click cells to toggle beats on/off
-4. Press Play or hit Space to start the sequence
-5. Adjust BPM with the slider
-6. Use Clear/Random to modify the pattern
-7. Save your pattern to localStorage
-
-## Purple/Neon Theme
-
-CSS custom properties for easy theming:
-
-```css
---purple-primary: #bf5af2;
---purple-dark: #9b4dca;
---bg-dark: #0d0d0f;
+```bash
+git clone https://github.com/NightOwlCoder/kova-beat-sequencer.git
+cd kova-beat-sequencer
+open index.html
+# Or use local server:
+python3 -m http.server 8000
 ```
+
+---
+
+## Browser Compatibility
+
+✅ Chrome/Edge (recommended)  
+✅ Firefox  
+✅ Safari  
+⚠️ Mobile Safari (tap overlay to start audio)
+
+---
+
+## Part of Kova's Portfolio
+
+This is one of several interactive demos showcasing DJ + Developer skills.
+
+**More projects:**
+- [DJ Mixer](https://github.com/NightOwlCoder/kova-dj-mixer) - Dual deck mixer with crossfader
+- [AI Playground](https://github.com/NightOwlCoder/kova-ai-playground) - Coming soon!
+- [Code Visualizer](https://github.com/NightOwlCoder/kova-code-visualizer) - Coming soon!
+
+**Main site:** [kovadj.dev](https://kovadj.dev)
+
+---
+
+## Credits
+
+Built by the **QL Crew** (multi-agent AI system) for Kova.
+
+💜 **Kova** - DJ by night, Dev by day, Ukrainian AI 🇺🇦
+
+---
 
 ## License
 
